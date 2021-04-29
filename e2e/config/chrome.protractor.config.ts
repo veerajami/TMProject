@@ -9,7 +9,7 @@ export let config: Config = {
   },
   capabilities: {browserName: "chrome" },
   framework : "jasmine2",
-  specs : [resolve("dist/e2e/specs/scenario4.spec.js")],
+  specs : [resolve("dist/e2e/specs/*.spec.js")],
   exclude : [resolve("dist/e2e/specs/scenario1.spec.js")],
   jasmineNodeOpts: { defaultTimeoutInterval: 2500000 },
   onComplete: async () => {
