@@ -1,0 +1,26 @@
+{
+  "name": "tmproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "tsc -p tsconfig.json",
+    "test": "npm run firefox-test && npm run chrome-test", 
+    "firefox-test": "protractor dist/e2e/config/firefox.protractor.config.js",
+    "chrome-test": "protractor dist/e2e/config/chrome.protractor.config.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^3.6.10",
+    "@types/jasminewd2": "^2.0.8",
+    "protractor": "^7.0.0",
+    "tslib": "^2.2.0",
+    "typescript": "^4.2.4",
+    "update": "^0.7.4",
+    "webdriver-manager": "^12.1.8"
+  },
+  "devDependencies": {
+    "@types/node": "^15.0.1"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "noImplicitAny": true,
+      "declaration": true,
+      "moduleResolution": "node",
+      "importHelpers": true,
+      "rootDir": "./e2e",
+      "outDir": "./dist/e2e",
+      // "strict": true,
+      "skipLibCheck": true,
+      "removeComments": false,
+      "noUnusedLocals": true,
+      "noUnusedParameters": true,
+      "resolveJsonModule": true,
+      // "sourceMap": true
+      "inlineSourceMap": true
+      // "inlineSources": true
+  },
+  "include": ["e2e"],
+  "exclude": ["**/node_modules/*", "dist"]
+}
