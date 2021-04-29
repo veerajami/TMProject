@@ -28,11 +28,8 @@ describe("scenario 2", async () => {
         userProperties.lastName,
         userProperties.password
       );
-      // await browser.waitForAngularEnabled(true);
       await homePage.validateHomePage();
       const loggedInUser: string = await homePage.getLoggedInUser();
-      // const expectedName = userProperties.firstName.toLowerCase().replace(userProperties.firstName.charAt(0), userProperties.firstName.charAt(0).toUpperCase());
-      console.log(userProperties.firstName);
       expect(loggedInUser).toEqual(`${userProperties.firstName}`);
       await homePage.clickOnUserDetails();
       await homePage.clickOnLogout();

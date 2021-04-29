@@ -32,6 +32,12 @@ export class SignUpPage {
   private languageDpd = by.id("language-button");
   private completeBtn = by.id("next");
 
+  /**
+   * This method creates user with given input values
+   * @author Jami
+   * @param {UserProperties} properties
+   * @memberof SignUpPage
+   */
   public async createUser(properties: UserProperties) {
     await this.enterFirstName(properties.firstName);
     await this.enterLastName(properties.lastName);
@@ -59,6 +65,11 @@ export class SignUpPage {
     await this.clickOnComplete();
   }
 
+  /**
+   * This method validates the Sign Up Page displayed
+   * @author Jami
+   * @memberof SignUpPage
+   */
   public async validateSignupPage() {
     await WaitUtils.waitUntilElementToBeClickable(await element(this.firstNameTxtBx), 30000);
     await expect(await element(this.sighupPageHeader).isDisplayed()).toBe(true);
@@ -162,6 +173,11 @@ export class SignUpPage {
     await SelectUtils.selectListDropDown(await element(this.languageDpd), language);
   }
 
+  /**
+   * This method performs click operation on Complete button
+   * @author Jami
+   * @memberof SignUpPage
+   */
   public async clickOnComplete() {
     await browser.sleep(2000);
     await element(this.completeBtn).click();

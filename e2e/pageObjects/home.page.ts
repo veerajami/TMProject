@@ -28,14 +28,29 @@ export class HomePage {
   private flightStatusLnk = by.xpath("//a[text()='FLIGHT STATUS']");
   private travelInfoLnk = by.xpath("//a[text()='Travel Info']");
 
+  /**
+   * This method performs click operation on singup button
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnSignUpBtn() {
     await element(this.signUpBtn).click();
   }
 
+  /**
+   * This method performs click operation on login button
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnLogin() {
     await element(this.loginBtn).click();
   }
 
+  /**
+   * This method validates the HomePage displayed
+   * @author Jami
+   * @memberof HomePage
+   */
   public async validateHomePage() {
     await WaitUtils.waitUntilElementToBeClickable(
       await element(this.fromField),
@@ -55,19 +70,40 @@ export class HomePage {
   }
 
 
+  /**
+   * This method performes logout operation
+   * @author Jami
+   * @memberof HomePage
+   */
   public async logout() {
     await this.clickOnUserDetails();
     await this.clickOnLogout();
   }
 
+  /**
+   * This method performs click on user details link
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnUserDetails() {
     await element(this.userDetailsBtn).click();
   }
 
+  /**
+   * This method performs click operation on logout button
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnLogout() {
     await element(this.logoutBtn).click();
   }
 
+  /**
+   * This method adds the given data to fligh booking fields
+   * @author Jami
+   * @param {FlightBookingDetails} details
+   * @memberof HomePage
+   */
   public async enterFligtDetails(details: FlightBookingDetails) {
     await this.searchAndSelectFrom(details.from);
     await this.searchAndSelectTo(details.to);
@@ -111,10 +147,21 @@ export class HomePage {
     }
   }
 
+  /**
+   * This method performs click operation on book link
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnBook() {
     await element(this.bookLnk).click();
   }
 
+  /**
+   * This method select the name on FROM field
+   * @author Jami
+   * @param {string} name
+   * @memberof HomePage
+   */
   public async searchAndSelectFrom(name: string) {
     await element(this.fromField).click();
     console.log("clicked on from");
@@ -126,6 +173,12 @@ export class HomePage {
     ).click();
   }
 
+  /**
+   * This method select the name on TO field
+   * @author Jami
+   * @param {string} name
+   * @memberof HomePage
+   */
   public async searchAndSelectTo(name: string) {
     await element(this.toField).click();
     await element(this.searchTxtBx).sendKeys(name);
@@ -136,6 +189,12 @@ export class HomePage {
     ).click();
   }
 
+  /**
+   * This method select the Trip Type
+   * @author Jami
+   * @param {string} tripType
+   * @memberof HomePage
+   */
   public async selectTripType(tripType: string) {
     await element(this.tripTypeDpd).click();
     await element(
@@ -143,18 +202,37 @@ export class HomePage {
     );
   }
 
+  /**
+   * This method select DepartDate
+   * @author Jami
+   * @param {string} date
+   * @memberof HomePage
+   */
   public async selectDepartDate(date: string) {
     await element(this.departField).click();
     await this.selectCalendarDate(date, 1);
     await element(this.calendarDoneBtn).click();
   }
 
+  /**
+   * This method selects the Return Date
+   * @author Jami
+   * @param {string} date
+   * @memberof HomePage
+   */
   public async selectReturnDate(date: string) {
     await element(this.returnField).click();
     await this.selectCalendarDate(date, 2);
     await element(this.calendarDoneBtn).click();
   }
 
+  /**
+   * This method selects date from Calendar field
+   * @author Jami
+   * @param {string} date
+   * @param {number} gridNum
+   * @memberof HomePage
+   */
   public async selectCalendarDate(date: string, gridNum: number) {
     const vals: string[] = date.split("/");
     while (
@@ -176,6 +254,12 @@ export class HomePage {
     ).click();
   }
 
+  /**
+   * This method selects the number of passengers from passengers field
+   * @author Jami
+   * @param {string} noOfPasgr
+   * @memberof HomePage
+   */
   public async selectPassengers(noOfPasgr: string) {
     await element(this.passengersDpd).click();
     await element(
@@ -185,22 +269,48 @@ export class HomePage {
     ).click();
   }
 
+  /**
+   * This method performs click operation on Shope With Miles link
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickShopWithMiles() {
     await element(this.shopeWithMilesChkBx).click();
   }
 
+  /**
+   * This method performs click operation on Refundable Fares checkbox
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickRefundableFares() {
     await element(this.refundableFaresChkBx).click();
   }
 
+  /**
+   * This method performs click operation on My Dates Area Flexible checkbox
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickMyDatesAreaFlexible() {
     await element(this.myDatesAreaFlexibleChkBx).click();
   }
 
+  /**
+   * This method performs click operation on Include Near By Airports checkbox
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickIncludeNearByAirports() {
     await element(this.nearByAirportsChkBx).click();
   }
 
+  /**
+   * This method selects the Fares drop down
+   * @author Jami
+   * @param {string} fares
+   * @memberof HomePage
+   */
   public async selectFares(fares: string) {
     await element(this.faresDpd).click();
     await element(
@@ -208,18 +318,40 @@ export class HomePage {
     ).click();
   }
 
+  /**
+   * This method the enters the given text under Meeting Code textbox
+   * @author Jami
+   * @param {string} code
+   * @memberof HomePage
+   */
   public async enterMeetingCode(code: string) {
     await element(this.meetingCodeTxtBx).sendKeys(code);
   }
 
+  /**
+   * THis method performs click operation on submit button
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnSubmit() {
     await element(this.submitBtn).click();
   }
 
+  /**
+   * THis method performs click operation on Fight Status link
+   * @author Jami
+   * @memberof HomePage
+   */
   public async clickOnFlightStatus() {
     await element(this.flightStatusLnk).click();
   }
 
+  /*
+   * THis method performs click operation on Travel Info Option
+   *
+   * @param {string} optionName
+   * @memberof HomePage
+   */
   public async clickOnTravelInfoOption(optionName: string) {
     await browser
       .actions()
@@ -232,6 +364,12 @@ export class HomePage {
       .perform();
   }
 
+  /**
+   * This method fetches the current logged in user name
+   * @author Jami
+   * @returns
+   * @memberof HomePage
+   */
   public async getLoggedInUser() {
     return await element(this.userDetailsBtn).getText();
   }
