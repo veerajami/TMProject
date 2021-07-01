@@ -33,7 +33,7 @@ describe("scenario 2", async () => {
       expect(loggedInUser).toEqual(`${userProperties.firstName}`);
       await homePage.clickOnUserDetails();
       await homePage.clickOnLogout();
-      await expect(await homePage.isHomePage()).toBe(true);
+      await expect(await homePage.isHomePage()).toBe(false);
     });
     afterEach(async () => {
       jasmine.DEFAULT_TIMEOUT_INTERVAL = originalTimeout;
